@@ -9,9 +9,11 @@
 .navbar {
   background-color: #333;
   color: white;
+  width: 98%;
   padding: 10px 20px; /* Reduced padding for a smaller navbar height */
   text-align: center;
-  position: sticky;
+  position: fixed;
+  background: transparent;
   top: 0;
   z-index: 1000;
 }
@@ -22,6 +24,10 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.navbar-container h1{
+  color: black;
 }
 
 .logo-img {
@@ -46,11 +52,16 @@
 
 .nav-links li {
   display: inline;
-  border-radius: 2px solid white;
+  /* border-radius: 2px solid rgb(198, 30, 30); */
+  color: black;
+  font-size:large;
 }
 
 .nav-links a {
-  color: white;
+  /* color: white; */
+  color: black;
+  /* background: #e53e3e;  */
+  border-radius: 10px solid black;
   text-decoration: none;
   font-size: 1.1em;
   padding: 8px 12px;
@@ -61,7 +72,134 @@
   background-color: #ff6347;
   border-radius: 5px;
 }
+/* Container Styling */
 
+.food-section {
+  /* background-color: #f9f9f9; */
+  padding: 50px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  height: 70vh;
+  /* background-color: #fff; */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Left Side Styling */
+.left-side {
+  width: 50%;
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 50px 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.left-side h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.left-side p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Right Side Styling */
+.right-side {
+  width: 50%;
+  text-align: center;
+  animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+.right-side img {
+  width: 80%;
+  height: auto;
+  /* border-radius: 10px; */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  opacity: 0;
+  animation: fadeInImage 2s ease-out forwards;
+}
+
+/* Keyframes for Animation Effects */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInImage {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsiveness for Small Screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-side, .right-side {
+    width: 100%;
+    text-align: center;
+  }
+
+  .right-side img {
+    width: 100%;
+  }
+}
 
 
 /* Hero Section Styling */
@@ -110,7 +248,7 @@
 /* Container for About Us section */
 .about-us-section {
   padding: 40px;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,19 +263,30 @@
   width: 100%;
   gap: 20px; /* Space between image and text */
   padding: 20px;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
 }
 
 /* Image styling */
 .about-image {
-  width: 40%; /* Set image width */
+  width: 40%;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
-  max-width: 500px; /* Limit the maximum width of the image */
+  max-width: 500px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for 3D effect */
 }
+
+.about-image:hover {
+  transform: rotateY(15deg) rotateX(10deg); /* Add 3D rotation on hover */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Create a shadow for 3D effect */
+}
+
+.container {
+  perspective: 1000px; /* Add perspective to make the 3D effect more pronounced */
+}
+
 
 /* Text container for the About Us content */
 .about-text-container {
@@ -455,4 +604,6 @@
     transform: translateY(0);
   }
 }
+
+
 
