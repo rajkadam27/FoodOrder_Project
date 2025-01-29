@@ -1,0 +1,87 @@
+/* Styling for the card container */
+.card {
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin: 20px;
+  }
+  
+  /* Card image container */
+  .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  /* Styling for the card image */
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* When the card image is clicked, apply a zoom-in effect */
+  .card-img.clicked {
+    transform: scale(1.1); /* Zoom in the image */
+    filter: brightness(1.2); /* Increase the brightness */
+  }
+  
+  /* Card content */
+  .card-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Card heading and description styling */
+  .card-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Price styling */
+  .price {
+    font-size: 1.2rem;
+    color: #ff6347;
+    font-weight: bold;
+  }
+  
+  /* Read More button */
+  .read-more {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the Read More button */
+  .read-more:hover {
+    background-color: #e55347;
+  }
+  
+  /* Hover effect for the card itself */
+  .card:hover {
+    transform: scale(1.05); /* Slight zoom effect on card hover */
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .card {
+      width: 90%;
+      margin: 10px;
+    }
+  }
+  
